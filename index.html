@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday baby 💖</title>
+<title>Happy Birthday My Love 💖</title>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -141,52 +141,6 @@ margin-top:20px;
 #count{
 font-size:clamp(60px,15vw,120px);
 }
-.birthday-heart{
-position:relative;
-width:180px;
-height:180px;
-background:#ff2f92;
-transform:rotate(-45deg);
-margin-top:40px;
-display:flex;
-justify-content:center;
-align-items:center;
-animation:beat 1.2s infinite;
-}
-
-.birthday-heart:before,
-.birthday-heart:after{
-content:"";
-position:absolute;
-width:180px;
-height:180px;
-background:#ff2f92;
-border-radius:50%;
-}
-
-.birthday-heart:before{
-top:-90px;
-left:0;
-}
-
-.birthday-heart:after{
-left:90px;
-top:0;
-}
-
-.birthday-heart span{
-transform:rotate(45deg);
-font-size:60px;
-font-weight:bold;
-color:white;
-text-shadow:0 0 20px white;
-}
-
-@keyframes beat{
-0%{transform:rotate(-45deg) scale(1);}
-50%{transform:rotate(-45deg) scale(1.1);}
-100%{transform:rotate(-45deg) scale(1);}
-}
 
 /* GALLERY */
 
@@ -305,26 +259,12 @@ font-size:16px;
 
 <body>
 
-    <!-- BACKGROUND SONG -->
-
-    <audio id="bgMusic" loop>
-<source src="Lyrical_Tum Jo Aaye.mp3" type="audio/mp3">
-</audio>
-
-<iframe 
-width="0" 
-height="0"
-src="https://www.youtube.com/embed/kTXilT_KbUM?autoplay=1&loop=1&playlist=kTXilT_KbUM"
-frameborder="0"
-allow="autoplay">
-</iframe>
-
 <!-- INTRO PAGE -->
 
 <div id="intro" class="page active">
 
 <video autoplay muted loop id="bg-video">
-<source src="151653-801075836_medium.mp4" type="video/mp4">
+<source src="51844-466374484_medium.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
@@ -333,12 +273,13 @@ allow="autoplay">
 
 <p class="intro-text">
 Something beautiful is waiting for you ✨  
-A little surprise made with love "k❤️"
+A little surprise made with love ❤️
 </p>
 
-<img src="placidplace-kiss-10795_256.gif" class="gif">
+<img src="pandas.gif" class="gif">
 
-<button class="magic-btn pulse" onclick="start();playMusic()">Start The Surprise ✨</button>
+<button class="magic-btn pulse" onclick="start()">Start The Surprise ✨</button>
+
 </div>
 
 <!-- COUNTDOWN -->
@@ -349,22 +290,6 @@ Something special is waiting for you, K🤍</h1>
 <div id="count">3</div>
 </div>
 
-<!-- BIRTHDAY HEART PAGE -->
-
-<div id="birthdayPage" class="page">
-
-<h1 class="title glow">Happy Birthday K ❤️</h1>
-
-<video class="gif" autoplay muted loop playsinline>
-<source src="kiss.mp4" type="video/mp4">
-</video>
-
-<button class="magic-btn pulse" onclick="goToPage(1)">
-Continue ✨
-</button>
-
-</div>
-
 <!-- PAGE 1 -->
 
 <div id="page1" class="page">
@@ -372,11 +297,11 @@ Continue ✨
 <h1 class="title">Happy Birthday My Love ❤️</h1>
 
 <p class="message">
-Meri dua hai ki tumhari life
-hamesha khushiyon se bhari rahe 😊🌸
-Tum bohot paisa kamao 💰💸
-aur har din life mein aage badhte raho 📈🚀
-God tumhe hamesha protect kare 🙏🤍✨
+From the moment you came into my life  
+everything became beautiful.
+
+Your smile makes my world brighter  
+every single day 💖
 </p>
 
 <img src="yellow.gif" class="gif">
@@ -432,8 +357,7 @@ Aur shayad isi liye tum mere liye aur bhi special ho. ❤️
 <img src="heartss.gif" class="gif">
 
 <button class="magic-btn" onclick="goToPage(4)">
-✨
-😘🥰 📸
+Our Photos 📸
 </button>
 
 </div>
@@ -502,10 +426,6 @@ Final Surprise 💌
 
 <script>
 
-    function playMusic(){
-document.getElementById("bgMusic").play();
-}
-
 function start(){
 document.getElementById("intro").classList.remove("active");
 document.getElementById("countdownPage").classList.add("active");
@@ -527,10 +447,7 @@ if(c==0){
 clearInterval(t);
 counter.innerText="🎉";
 confetti({particleCount:200,spread:90});
-setTimeout(()=>{
-document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
-document.getElementById("birthdayPage").classList.add("active");
-},1200);
+setTimeout(()=>goToPage(1),1200);
 
 }
 
